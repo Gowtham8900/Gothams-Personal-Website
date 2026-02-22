@@ -1,0 +1,115 @@
+You are my senior frontend engineer + designer. Build a visually stunning, futuristic personal website for me (single person portfolio) with lots of tasteful motion (NO videos). Everything should feel premium: hover states, smooth transitions, animated gradients, parallax, subtle 3D/particle background, and micro-interactions.
+
+GOAL
+- A futuristic, highly interactive personal site about me + my projects.
+- Fast, clean, accessible, mobile-first, SEO friendly.
+- Deployed free on Vercel.
+- No heavy assets. No video. Prefer CSS + lightweight canvas for background motion.
+
+STACK (use exactly this)
+- Next.js 14+ (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion for animations
+- react-icons (or lucide-react) for icons
+- next-sitemap for sitemap
+- next-seo (optional) or manual metadata in Next App Router
+- (Optional but preferred) @react-three/fiber + drei OR a lightweight Canvas particles implementation for a subtle animated background.
+  - If three.js is used: keep it minimal (one scene background, low-poly geometry, low GPU load, respects prefers-reduced-motion).
+  - If not: implement particles with canvas 2D.
+
+DESIGN LANGUAGE (very important)
+- Futuristic / cyber-clean / “premium SaaS landing”
+- Dark mode by default, with neon accents (electric blue / purple / teal). Use gradients, glassmorphism cards, subtle noise texture.
+- Layout: lots of whitespace, large headings, crisp typography, grid-based.
+- Everything interactive: cards lift on hover, buttons glow, links underline-animate, sections fade/slide in on scroll.
+- Add a global animated background (particles / gradient waves / subtle 3D blob) that moves slowly.
+- No stock photos needed. Use abstract UI shapes + gradients + animated lines.
+
+SITE STRUCTURE (pages)
+1) Home (/)
+   - Hero: my name, role tagline, short intro, primary CTA buttons (View Projects, Contact).
+   - Animated “tech orbit” badges (React, .NET, Azure, etc.) that float subtly.
+   - Highlight stats (Years experience, repos/projects, specialties) with count-up animation.
+   - Featured Projects (3 cards)
+   - Timeline preview
+   - Call to action footer
+
+2) Projects (/projects)
+   - Filterable projects grid (All / Work / Side Projects / OSS)
+   - Each project card: title, short impact line, tags, “Case study” link
+   - On hover: animated border glow + tilt effect
+   - Clicking opens a dynamic route case study page (/projects/[slug])
+
+3) Project case study page (/projects/[slug])
+   - Hero with project title, role, stack, outcomes
+   - Sections: Problem → Approach → Architecture → Results → Lessons
+   - Include a “system diagram” component (simple SVG lines + nodes, animated draw-in)
+   - Include “metrics” component with animated bars
+   - Back link + next/prev project
+
+4) About (/about)
+   - Short story, strengths, what I’m focused on
+   - Skills grid with animated progress / category chips
+   - Timeline (work + key milestones) with scroll reveal
+   - “Now” section (what I’m doing currently)
+
+5) Contact (/contact)
+   - Minimal form (name/email/message) with client-side validation
+   - Use a “mailto:” submit by default (no backend), but build it clean so I can add an API route later
+   - Social links
+
+CORE COMPONENTS
+- Sticky top navbar (blur/glass) with active route indicator + subtle animated underline
+- Theme toggle (optional; default dark)
+- Animated background component (particles or 3D blob)
+- Section wrapper with scroll reveal (Framer Motion + Intersection Observer)
+- Reusable Card component with hover glow + tilt
+- Button component (primary neon glow + secondary ghost)
+- Tag/Chip component with animated gradient border
+- Footer with links + “built with Next.js” small text
+
+ANIMATIONS / INTERACTIONS (must include)
+- Page transitions (App Router): animate route change (fade + slight slide)
+- Scroll reveal for sections (stagger children)
+- Hover tilt cards (small rotation based on mouse position)
+- Animated gradient borders on cards (subtle)
+- Parallax effect in hero background (mouse move)
+- Reduced motion support: if prefers-reduced-motion, disable heavy motion + reduce particles
+
+CONTENT (use placeholders but structured)
+- Use my name as “Gowtham” (I will edit later)
+- Role tagline: “Software Engineer • .NET • React • Azure”
+- Projects: create 6 sample projects with realistic descriptions and tags:
+  - Boom / Inventory Integration (Work)
+  - Application Rules Engine & Fees (Work)
+  - Lease Document Generation Pipeline (Work)
+  - OpenRadius.ai (Side)
+  - RentMate (Side)
+  - Observability + OTel Dashboards (Work)
+- Include tags like: Next.js, React, .NET, Azure Functions, Service Bus, OpenTelemetry, EF Core, TypeScript.
+
+ENGINEERING REQUIREMENTS
+- Must be performant (Lighthouse-friendly)
+- Use Next Image only if needed (mostly avoid images)
+- Use semantic HTML, accessible focus states, keyboard navigable
+- SEO:
+  - Add metadata per page
+  - Add OpenGraph defaults
+  - Create sitemap.xml + robots.txt (next-sitemap)
+- Add a JSON-LD Person schema on Home or About page
+- Add smooth scrolling and anchor links for sections on Home
+- Add “/resume” route that downloads a placeholder PDF (I’ll replace later)
+- Use environment variables ONLY if needed (none required now)
+
+PROJECT SETUP OUTPUT
+- Provide the full file/folder structure and code for each file.
+- Use Tailwind with a clean config and globals (including background noise via CSS if possible).
+- Add a README with:
+  - local dev commands
+  - deploy to Vercel steps
+  - how to customize projects content
+- Ensure it runs with: npm install && npm run dev
+
+DELIVERABLE
+Generate the complete Next.js project code (App Router) with the above pages, animations, and components, ready to deploy on Vercel.
